@@ -8,6 +8,7 @@ public class interact : MonoBehaviour
     public VRTK.Prefabs.Interactions.Interactors.InteractorFacade Interactor;
     public GameObject touching;
     public GameObject interaction;
+    public AudioSource audio;
 
     // Start is called before the first frame update
     void Start()
@@ -25,9 +26,16 @@ public class interact : MonoBehaviour
             if (list[0])
             {
                 if (interaction.activeSelf == true)
+                {
                     interaction.SetActive(false);
+                    audio.Pause();
+                }
+
                 else
+                {
                     interaction.SetActive(true);
+                    audio.Play();
+                }
             }
 
         }

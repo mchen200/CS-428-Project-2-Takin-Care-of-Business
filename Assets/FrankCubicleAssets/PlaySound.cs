@@ -20,15 +20,10 @@ public class PlaySound : MonoBehaviour
     {
         if (Interactor.ActiveTouchedObject == touching)
         {
-            IReadOnlyList<GameObject> list = Interactor.GrabbedObjects;
-
-            if (list[0])
-            {
                 if (!sound.isPlaying)
                 {
                     sound.PlayOneShot(sound.clip);
                 }
-            }
 
         }
     }
